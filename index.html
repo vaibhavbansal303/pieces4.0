@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pieces for Developers Facts</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('https://wallpaperaccess.com/full/5522905.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: 3d0c02; /* Change text color to white for better contrast */
+        }
+
+        #app {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background for readability */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            background-color: rgba(226, 226, 226, 0.8); /* Semi-transparent background for list items */
+            margin: 10px 0;
+            padding: 15px;
+            border-radius: 5px;
+        }
+
+        li:nth-child(odd) {
+            background-color: rgba(209, 209, 209, 0.8); /* Semi-transparent background for odd list items */
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <h1>Pieces for Developers Facts</h1>
+        <ul id="facts-list"></ul>
+    </div>
+    <script>
+        const facts = [
+            {
+                "fact": "Snippet Management",
+                "description": "Pieces for Developers is designed to help developers manage and organize code snippets efficiently.",
+                "explanation": "Snippet management is a core feature of Pieces for Developers, allowing users to store, organize, and retrieve code snippets easily."
+            },
+            {
+                "fact": "AI-Powered",
+                "description": "It uses AI to automatically categorize and tag snippets, making it easier to find and reuse code.",
+                "explanation": "The AI algorithms in Pieces for Developers analyze code snippets to categorize and tag them, improving searchability and reuse."
+            },
+            {
+                "fact": "Cross-Platform",
+                "description": "Pieces for Developers is available on multiple platforms, including Windows, macOS, and Linux.",
+                "explanation": "The application is developed to run on various operating systems, ensuring accessibility for a wide range of users."
+            },
+            {
+                "fact": "Integration",
+                "description": "It integrates seamlessly with popular IDEs like Visual Studio Code and JetBrains, enhancing the development workflow.",
+                "explanation": "Integration with IDEs allows developers to access and manage snippets directly within their coding environment."
+            },
+            {
+                "fact": "Offline Access",
+                "description": "Unlike many cloud-based tools, Pieces for Developers allows offline access to your snippets, ensuring you can work without an internet connection.",
+                "explanation": "The application stores snippets locally, enabling users to access them even when not connected to the internet."
+            },
+            // Add explanations for the remaining facts similarly...
+        ];
+
+        const factsList = document.getElementById('facts-list');
+
+        facts.forEach(fact => {
+            const listItem = document.createElement('li');
+            listItem.innerHTML = `<strong>${fact.fact}:</strong> ${fact.description}`;
+            
+            const factCheckButton = document.createElement('button');
+            factCheckButton.textContent = 'Fact Check';
+            factCheckButton.onclick = () => alert(fact.explanation);
+            
+            listItem.appendChild(factCheckButton);
+            factsList.appendChild(listItem);
+        });
+    </script>
+</body>
+</html>
